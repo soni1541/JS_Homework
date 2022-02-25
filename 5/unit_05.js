@@ -226,12 +226,11 @@ document.querySelector('.b-10').onclick = t10;
 
 function t11() {
 
-    let divs11 = document.querySelector('.div-11').value;
-    divs11 += document.querySelector('.div-11').value1;
-    divs11 += document.querySelector('.div-11').value2;
+    let divs11 = document.getElementsByClassName('div-11');
+    //console.log(divs11);
     let text = '';
 
-    for(let i = 0; i < divs11.count; ++i)
+    for(let i = 0; i < divs11.length; ++i)
     {
         text += divs11[i].innerHTML + '_';
     }
@@ -248,7 +247,11 @@ document.querySelector('.b-11').onclick = t11;
 
 
 function t12() {
-
+    let divs12 = document.getElementsByClassName('div-12');
+    for(let i = 0; i < divs12.length; ++i)
+    {
+        divs12[i].style.background = 'orange';
+    }
 }
 
 document.querySelector('.b-12').onclick = t12;
@@ -257,7 +260,11 @@ document.querySelector('.b-12').onclick = t12;
 // С помощью цикла присвойте всем input .i-13 value равное 1 для первого, 2 для второго и 3 для третьего.
 
 function t13() {
-
+    let inputs = document.getElementsByClassName('i-13');
+    for(let i = 0; i < inputs.length; ++i)
+    {
+        inputs[i].value = i + 1;
+    }
 }
 
 document.querySelector('.b-13').onclick = t13;
@@ -270,7 +277,14 @@ document.querySelector('.b-13').onclick = t13;
 
 
 function t14() {
-
+    let inputs = document.getElementsByClassName('i-14');
+    for(let i = 0; i < inputs.length; ++i)
+    {
+        if(inputs[i].checked)
+        {
+            document.querySelector('.out-14').textContent = inputs[i].value;
+        }
+    }
 }
 
 document.querySelector('.b-14').onclick = t14;
